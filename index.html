@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raj Electronics - Your Trusted Tech Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* cool-gray-50 */
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1600x800/e2e8f0/334155?text=Latest+Electronics');
+            background-size: cover;
+            background-position: center;
+        }
+        .category-card:hover .category-image {
+            transform: scale(1.05);
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-2xl font-bold text-slate-800">Raj Electronics</a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-indigo-600 transition-colors">Home</a>
+                    <a href="#products" class="text-gray-600 hover:text-indigo-600 transition-colors">Products</a>
+                    <a href="#about" class="text-gray-600 hover:text-indigo-600 transition-colors">About Us</a>
+                    <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Header Icons -->
+                <div class="hidden md:flex items-center space-x-5">
+                     <a href="#" class="text-gray-500 hover:text-indigo-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-indigo-600 relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.16"/></svg>
+                         <span class="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">3</span>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-indigo-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-circle"><path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><circle cx="12"cy="12" r="10"/></svg>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-indigo-600 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <nav class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
+                <a href="#home" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Home</a>
+                <a href="#products" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Products</a>
+                <a href="#about" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">About Us</a>
+                <a href="#contact" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-bg text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-48 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Latest Gadgets, Unbeatable Prices</h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-gray-200">Discover a wide range of top-quality electronics from leading brands. Your perfect tech upgrade is just a click away.</p>
+                <a href="#products" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-transform transform hover:scale-105">Shop Now</a>
+            </div>
+        </section>
+
+        <!-- Featured Categories Section -->
+        <section id="categories" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-slate-800 mb-12">Shop by Category</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Category Card 1 -->
+                    <a href="#televisions" class="category-card block group overflow-hidden rounded-lg shadow-lg">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x400/a5b4fc/1e293b?text=TVs" alt="Televisions" class="category-image w-full h-64 object-cover transition-transform duration-300">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                                <h3 class="text-2xl font-semibold text-white">Televisions</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Category Card 2 -->
+                     <a href="#products" class="category-card block group overflow-hidden rounded-lg shadow-lg">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x400/99f6e4/1e293b?text=Appliances" alt="Home Appliances" class="category-image w-full h-64 object-cover transition-transform duration-300">
+                             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                                <h3 class="text-2xl font-semibold text-white">Home Appliances</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Category Card 3 -->
+                     <a href="#products" class="category-card block group overflow-hidden rounded-lg shadow-lg">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x400/fca5a5/1e293b?text=Kitchen" alt="Kitchen Appliances" class="category-image w-full h-64 object-cover transition-transform duration-300">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                                <h3 class="text-2xl font-semibold text-white">Kitchen Appliances</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Category Card 4 -->
+                    <a href="#products" class="category-card block group overflow-hidden rounded-lg shadow-lg">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x400/fde047/1e293b?text=Mobiles" alt="Smartphones" class="category-image w-full h-64 object-cover transition-transform duration-300">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                                <h3 class="text-2xl font-semibold text-white">Smartphones</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Televisions Section -->
+        <section id="televisions" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-slate-800 mb-12">Televisions</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                    <!-- Samsung TV -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+                        <img src="https://placehold.co/600x600/1e40af/ffffff?text=Samsung" alt="Samsung TV" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-slate-800 mb-2">Samsung Crystal 4K UHD TV</h3>
+                            <p class="text-2xl font-bold text-indigo-600 mb-4">₹45,990</p>
+                            <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Redmi TV -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+                        <img src="https://placehold.co/600x600/ef4444/ffffff?text=Redmi" alt="Redmi TV" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-slate-800 mb-2">Redmi 4K Ultra HD Android TV</h3>
+                            <p class="text-2xl font-bold text-indigo-600 mb-4">₹28,999</p>
+                            <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Wikshan TV -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+                        <img src="https://placehold.co/600x600/374151/ffffff?text=Wikshan" alt="Wikshan TV" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-slate-800 mb-2">Wikshan HD Ready Smart LED TV</h3>
+                            <p class="text-2xl font-bold text-indigo-600 mb-4">₹9,999</p>
+                            <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- LG TV -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+                        <img src="https://placehold.co/600x600/be123c/ffffff?text=LG" alt="LG TV" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-slate-800 mb-2">LG 4K Ultra HD Smart LED TV</h3>
+                            <p class="text-2xl font-bold text-indigo-600 mb-4">₹42,990</p>
+                            <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Adsun TV -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+                        <img src="https://placehold.co/600x600/0f766e/ffffff?text=Adsun" alt="Adsun TV" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-slate-800 mb-2">Adsun Full HD Smart LED TV</h3>
+                            <p class="text-2xl font-bold text-indigo-600 mb-4">₹12,499</p>
+                            <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Products Section -->
+        <section id="products" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-slate-800 mb-12">All Products</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <!-- Washing Machine -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+                        <img src="https://placehold.co/600x600/fee2e2/991b1b?text=Washing+Machine" alt="Washing Machine" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-slate-800 mb-2">Fully-Automatic Washing Machine</h3>
+                            <p class="text-2xl font-bold text-indigo-600 mb-4">₹15,790</p>
+                            <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Mobile Phone -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+                        <img src="https://placehold.co/600x600/fef9c3/854d0e?text=Mobile+Phone" alt="Smartphone" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-slate-800 mb-2">Latest Model Mobile (128GB)</h3>
+                            <p class="text-2xl font-bold text-indigo-600 mb-4">₹19,999</p>
+                            <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Microwave -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+                        <img src="https://placehold.co/600x600/f3e8ff/581c87?text=Microwave" alt="Microwave Oven" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-slate-800 mb-2">Convection Microwave Oven</h3>
+                            <p class="text-2xl font-bold text-indigo-600 mb-4">₹11,499</p>
+                            <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">Add to Cart</button>
+                        </div>
+                    </div>
+                     <!-- Refrigerator -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+                        <img src="https://placehold.co/600x600/d1fae5/064e3b?text=Fridge" alt="Refrigerator" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-slate-800 mb-2">Frost-Free Double Door Refrigerator</h3>
+                            <p class="text-2xl font-bold text-indigo-600 mb-4">₹24,490</p>
+                            <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">Add to Cart</button>
+                        </div>
+                    </div>
+                     <!-- Air Conditioner -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+                        <img src="https://placehold.co/600x600/bae6fd/0c4a6e?text=Air+Conditioner" alt="Air Conditioner" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-slate-800 mb-2">1.5 Ton Split Inverter AC</h3>
+                            <p class="text-2xl font-bold text-indigo-600 mb-4">₹35,990</p>
+                            <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">Add to Cart</button>
+                        </div>
+                    </div>
+                     <!-- Laptop -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+                        <img src="https://placehold.co/600x600/dcfce7/14532d?text=Laptop" alt="Laptop" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-slate-800 mb-2">Core i5 Thin & Light Laptop</h3>
+                            <p class="text-2xl font-bold text-indigo-600 mb-4">₹45,999</p>
+                            <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">Add to Cart</button>
+                        </div>
+                    </div>
+                     <!-- Headphones -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+                        <img src="https://placehold.co/600x600/e5e7eb/1f2937?text=Headphones" alt="Headphones" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-slate-800 mb-2">Wireless Bluetooth Headphones</h3>
+                            <p class="text-2xl font-bold text-indigo-600 mb-4">₹2,499</p>
+                            <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="about" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-slate-800 mb-12">Why Shop With Us?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="m12 3-1.9 4.2-4.1.6 3 2.9-1 4.3L12 19l3.6 2.1-1-4.3 3-2.9-4.1-.6L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">Genuine Brands</h3>
+                        <p class="text-gray-600">We only stock 100% original products from trusted brands with official warranties.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mx-auto mb-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck"><path d="M5 18H3c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v11"/><path d="M14 9h4l4 4v4h-8v-4h-4V9Z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="16.5" cy="18.5" r="2.5"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">Fast Delivery</h3>
+                        <p class="text-gray-600">Get your favorite gadgets delivered to your doorstep quickly and safely.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mx-auto mb-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-indian-rupee"><path d="M6 3h12"/><path d="M6 8h12"/><path d="M6 13h12"/><path d="M6 18h12"/><path d="M12 3v18"/><path d="M8 8a4 4 0 0 0 4 4h4"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">Best Prices</h3>
+                        <p class="text-gray-600">We offer competitive pricing and great deals to give you the best value for your money.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-headphones"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">Expert Support</h3>
+                        <p class="text-gray-600">Our knowledgeable team is always here to help you with your purchase decisions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 bg-gray-100">
+             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold text-slate-800 mb-4">Get In Touch</h2>
+                    <p class="text-gray-600 text-lg mb-8">Have a question or need help? We'd love to hear from you. Reach out to us or visit our store.</p>
+                </div>
+                 <div class="bg-white rounded-lg shadow-xl p-8 md:p-12 mt-8 max-w-4xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <!-- Contact Form -->
+                        <form>
+                            <div class="mb-5">
+                                <label for="name" class="block mb-2 text-sm font-medium text-gray-700">Your Name</label>
+                                <input type="text" id="name" class="block w-full p-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-indigo-500 focus:border-indigo-500" placeholder="John Doe" required>
+                            </div>
+                            <div class="mb-5">
+                                <label for="email" class="block mb-2 text-sm font-medium text-gray-700">Your Email</label>
+                                <input type="email" id="email" class="block w-full p-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-indigo-500 focus:border-indigo-500" placeholder="name@example.com" required>
+                            </div>
+                            <div class="mb-5">
+                                <label for="message" class="block mb-2 text-sm font-medium text-gray-700">Message</label>
+                                <textarea id="message" rows="4" class="block w-full p-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Your message..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-3 text-center">Send Message</button>
+                        </form>
+                        <!-- Contact Details -->
+                        <div class="space-y-6">
+                            <h3 class="text-2xl font-semibold text-slate-800">Contact Information</h3>
+                            <div class="flex items-start space-x-4">
+                               <div class="flex-shrink-0 text-indigo-600 mt-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                                <div>
+                                    <h4 class="font-semibold">Our Address</h4>
+                                    <p class="text-gray-600">BDO Office, Narnaund, 125039, Raj Electronics</p>
+                                </div>
+                            </div>
+                             <div class="flex items-start space-x-4">
+                               <div class="flex-shrink-0 text-indigo-600 mt-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+                                <div>
+                                    <h4 class="font-semibold">Email Us</h4>
+                                    <p class="text-gray-600">vansh.khurana4352@gmail.com</p>
+                                </div>
+                            </div>
+                             <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 text-indigo-600 mt-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                                <div>
+                                    <h4 class="font-semibold">Call Us</h4>
+                                    <p class="text-gray-600">+91 9812470551 (Mr. Arun Kumar)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+             </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-xl font-bold mb-4">Raj Electronics</h3>
+                    <p class="text-gray-400">Your one-stop shop for the latest and best in electronics. We've been proudly serving our customers for over 20 years with a commitment to quality and service.</p>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Social -->
+                 <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 1.4 3.3 4.4 3.3 4.4s-1.4-.6-2.8-.9c-1.2 2.2-2.8 4.3-4.2 5.1s-4.7 1.2-6.5-.2c-1.8-1.4-2.5-4.2-2.5-4.2s-2.3.9-3.6-1.5c-1.3-2.4-.9-5.1-.9-5.1s1.4.6 2.8.3c-.7-1.1-1.4-3.3-1.4-3.3s2.1 2.3 5.9 2.9s4.7-.2 4.7-.2"/></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 Raj Electronics. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
